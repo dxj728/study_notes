@@ -4,3 +4,7 @@ Git is free software.
 Git has a mutable index called stage.
 
 dxj728 hahahaha
+
+why git diff is broke?
+
+i want to test branch by dxj728
