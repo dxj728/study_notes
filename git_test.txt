@@ -2,7 +2,7 @@
 作者：dxj728
 说明：git学习笔记
 参考来源：Git教程By廖雪峰
-windows下git下载地址：http://msysgit.github.io/
+windows下git软件下载地址：http://msysgit.github.io/
 
 一、git初始化配置
     1.初始化仓库（将本地空目录初始化为git本地仓库，无参数）
@@ -18,7 +18,7 @@ windows下git下载地址：http://msysgit.github.io/
 二、正常修改及上传流程
     0.从git远端仓库克隆文件（github等服务器仓库）
     git clone https://github.com/dxj728/xxx.git
-    对代码文件等进行增添修改。。。
+    开始对代码文件内容等进行各种改动。。。
 
     1.添加修改后的文件至git本地仓库暂存区（前提：本地仓库目录下存在git_test.txt文件）
     git add xxx.txt
@@ -26,10 +26,10 @@ windows下git下载地址：http://msysgit.github.io/
     2.提交修改后文件至git本地仓库，并增加修改说明(注：可以多次add后一次提交，说明注释注意含有半角双引号"")
     git commit -m "file:增加了xxx.txt文件"
 
-    3.推送至git远端仓库（注：默认为主分支，即master分支）
+    3.推送至git远端仓库（注：默认为主分支，即master分支，git push为简化命令，可以忽略origin master等语句，指定为其他分支时不可忽略）
     git push
     上条等同于：git push origin master
-        推送至其他分支（origin为源点，远端的意思，上句的git push为简化命令，可以忽略origin master等语句，指定为其他分支时不可忽略）
+        推送至其他分支（origin为源点，远端的意思）
         git push origin xxx
 
 
