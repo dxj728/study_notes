@@ -15,12 +15,20 @@ windows下git软件下载地址：http://msysgit.github.io/
         git config --local user.name "dxj728"
         git config --local user.email "dxj728@163.com"
 
+    3.已在github网站上注册过账号并建立了一个远程仓库后：
+        a.关联远程库：
+            git remote add origin git@github.com:dxj728/xxx.git
+        b.首次推送内容内容并关联：
+            git push -u origin master
+
+
+
 二、正常修改及上传流程
     0.从git远端仓库克隆文件（github等服务器仓库）
     git clone https://github.com/dxj728/xxx.git
     开始对代码文件内容等进行各种改动。。。
 
-    1.添加修改后的文件至git本地仓库暂存区（前提：本地仓库目录下存在git_test.txt文件）
+    1.添加修改后的文件至git本地仓库暂存区，可以多次执行add命令（前提：本地仓库目录下存在git_test.txt文件）
     git add xxx.txt
 
     2.提交修改后文件至git本地仓库，并增加修改说明(注：可以多次add后一次提交，说明注释注意含有半角双引号"")
@@ -31,6 +39,43 @@ windows下git软件下载地址：http://msysgit.github.io/
     上条等同于：git push origin master
         推送至其他分支（origin为源点，远端的意思）
         git push origin xxx
+
+    4.获取本地仓库当前的修改状态
+    git status
+    效果：显示当前有改动的文件名，但不显示修改内容
+
+    5.查看修改文件的修改内容
+    git diff xxx.txt
+
+
+    6.查看仓库最近3次的提交记录
+    git log
+
+    7.git版本回退
+    git reset --hard HEAD^/commitid
+    效果：回退仓库文件至上一个版本。或commitid的至少前6位，上上一个版本(HEAD^^), 上100个版本(HEAD~100),
+
+    8.git的历史操作命令
+    git reflog
+
+    9.放弃当前还未推送的文件修改
+    git checkout -- xxx.txt
+    效果：1.已commit后修改：回退文件至上一步commit后的状态
+         2.已add后修改，：回退文件至上一步add后的状态
+
+    10.删除版本库中的文件
+    git rm xxx.txt
+    git commit -m "note"
+
+    11.创建分支并切换到该分支
+    git checkout -b xxx
+    上条等同于：git branch xxx (创建xxx分支)
+               git checkout xxx (切换到xxx分支)
+
+    12.查看当前分支
+    git branch
+
+    13.
 
 
 
