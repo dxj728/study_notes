@@ -55,7 +55,6 @@ windows下git软件下载地址：http://msysgit.github.io/
     6.查看修改文件的修改内容
     git diff xxx.txt
 
-
     7.查看仓库最近3次的提交记录
     git log
 
