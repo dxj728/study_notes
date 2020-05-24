@@ -24,6 +24,9 @@ windows下git软件下载地址：http://msysgit.github.io/
     4.设置git远端版本库上的默认推送分支
     git push --set-upstream origin xxx/master
 
+    5.(附)设置git显示不同颜色的命令
+    git config --global color.ui true
+
 
 二、正常修改及上传流程
     0.从git远端仓库克隆文件（github等服务器仓库）
@@ -42,43 +45,91 @@ windows下git软件下载地址：http://msysgit.github.io/
         推送至其他分支（origin为源点，远端的意思）
         git push origin xxx
 
-    4.获取本地仓库当前的修改状态
+    4.获取远端最新版本合并
+    git pull
+
+    5.获取本地仓库当前的修改状态
     git status
     效果：显示当前有改动的文件名，但不显示修改内容
 
-    5.查看修改文件的修改内容
+    6.查看修改文件的修改内容
     git diff xxx.txt
 
 
-    6.查看仓库最近3次的提交记录
+    7.查看仓库最近3次的提交记录
     git log
 
-    7.git版本回退
+    8.git版本回退
     git reset --hard HEAD^/commitid
     效果：回退仓库文件至上一个版本。或commitid的至少前6位，上上一个版本(HEAD^^), 上100个版本(HEAD~100),
 
-    8.git的历史操作命令
+    9.git的历史操作命令
     git reflog
 
-    9.放弃当前还未推送的文件修改
+    10.放弃当前还未推送的文件修改
     git checkout -- xxx.txt
     效果：1.已commit后修改：回退文件至上一步commit后的状态
          2.已add后修改，：回退文件至上一步add后的状态
 
-    10.删除版本库中的文件
+    11.删除版本库中的文件
     git rm xxx.txt
     git commit -m "note"
 
-    11.创建分支并切换到该分支
+    12.创建分支并切换到该分支
     git checkout -b xxx
     上条等同于：git branch xxx (创建xxx分支)
                git checkout xxx (切换到xxx分支)
 
-    12.查看当前分支
+    13.查看当前分支
     git branch
 
-    13.合并xxx分支到当前分支
+    14.合并xxx分支到当前分支
     git merge xxx
+        保留分支信息进行合并：
+        git merge --no-ff -m "note" xxx
 
+    15.删除分支
+    git branch -d xxx
+        强行删除分支：
+        git branch -D xxx
 
+    16.工作区临时保存
+    git stash
+        a.查看工作区保存列表：git stash list
+        b.恢复工作区，但保留记录：git stash apply
+        c.删除工作区保存列表：git stash drop
+        d.(推荐)恢复工作区并删除stash内容：git stash pop
 
+    17.打tag
+    git tag xxx
+        a.查看所有tag: git tag
+        b.给指定的connitid打tag：git tag xxx commitid
+        c.带说明(-m)、带私钥(-s)的tag: git tag -s -a xxx -m "note"
+        d.查看某一tag详细信息: git show xxx
+        e.删除tag: git tag -d xxx
+        f.推送至远端tag: git push origin xxx
+
+三、常见问题及其他
+    1.版本冲突解决
+        a.git status获取冲突文件
+        b.打开冲突文件进行手动修改
+            git 使用<<<<<, ======, >>>>>> 标记不同分支的内容
+        c.修改后进行重新add提交
+
+    2.忽略文件(.gitignore)
+    在.git文件夹下直接创建.gitignore文件
+        内容格式参考：
+        # Windows:
+        Thumbs.db
+        .idea/
+        Desktop.ini
+        # Python:
+        *.py[cod]
+        *.egg-info
+        dist
+
+    3.设置命令别名
+    git config --global alias.st status
+    效果:git status == git st
+
+Over
