@@ -21,6 +21,9 @@ windows下git软件下载地址：http://msysgit.github.io/
         b.首次推送内容内容并关联：
             git push -u origin master
 
+    4.设置git远端版本库上的默认推送分支
+    git push --set-upstream origin xxx/master
+
 
 
 二、正常修改及上传流程
