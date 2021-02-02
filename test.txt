@@ -1,0 +1,9 @@
+import os, sys
+if os.path.exists('1.txt'):
+    print('存在')
+    time.sleep(3)
+    sys.exit(0)
+else:
+    print('无')
+    time.sleep(3)
+    sys.exit(-1)
