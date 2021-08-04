@@ -1,7 +1,7 @@
 一.win10取消任务栏预览
-	1.右键开始-->运行-->输入 regedit ，打开注册表编辑器
+	1. 右键开始-->运行-->输入 regedit ，打开注册表编辑器
 	2. 定位到HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced 注册表项
-	3.右侧直接执行“新建/Dword（32位）值”菜单项，并将新建的Dword值重命名为ExtendedUIHoverTime ，数值改为9000（十六进制）
+	3. 右侧直接执行“新建/Dword（32位）值”菜单项，并将新建的Dword值重命名为ExtendedUIHoverTime ，数值改为9000（十六进制）
 	4. 再定位到注册表的HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband注册表项
 	5. 同样新建一个注册表键值，重命名为 NumThumbnails , 数值改为0（十六进制）
 	6. 重启电脑生效
